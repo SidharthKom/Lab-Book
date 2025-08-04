@@ -79,10 +79,3 @@ public class qn_9 {
 
 }
 
-//String a = "Sidharth";
-//System.out.println(a+a);
-//int length = a.length();
-//
-//for(int i = 0;i<length;i++) {
-//	if a[]
-//}
