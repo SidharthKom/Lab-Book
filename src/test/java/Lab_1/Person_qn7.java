@@ -1,5 +1,5 @@
 package Lab_1;
-// Qn 7
+
 	 
 public class Person_qn7 {
 		String firstName;

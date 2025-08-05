@@ -1,8 +1,5 @@
 package Lab_1;
-// Qn_6
-// Qn 7
-// Qn 8
-	 
+ 
 public class Person_qn6 {
 		String firstName;
 		String lastName;

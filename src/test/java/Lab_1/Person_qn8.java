@@ -1,5 +1,4 @@
 package Lab_1;
-// Qn 7
 	 
 public class Person_qn8 {
 		String firstName;
