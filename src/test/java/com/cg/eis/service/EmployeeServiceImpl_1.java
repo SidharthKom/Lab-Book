@@ -2,7 +2,7 @@
 //
 //import com.cg.eis.bean.Employee_1;
 //
-//public class EmployeeServiceImpl implements EmployeeService_1 {
+//public class EmployeeServiceImpl_1 implements EmployeeService_1 {
 //
 //    @Override
 //    public void findInsuranceScheme(Employee_1 emp) {
