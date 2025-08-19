@@ -2,6 +2,7 @@ package Webdriver;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -50,11 +51,13 @@ public void tearDown() {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     driver.get("https://tutorialsninja.com/demo/index.php?");
     driver.manage().window().setSize(new Dimension(1552, 832));
-    assertThat(driver.getTitle(), is("Your Store"));
+    Assert.assertEquals(driver.getTitle(), "Your Store");
+    System.out.println("The Title Your Store is verified");
     driver.findElement(By.linkText("Desktops")).click();
     driver.findElement(By.linkText("Mac (1)")).click();
-    assertThat(driver.getTitle(), is("Mac"));
-    //driver.findElement(By.linkText("   -Mac (1)")).click();
+    
+    Assert.assertEquals(driver.getTitle(), "Mac");
+    System.out.println("Title 'Mac' is verified");
     driver.findElement(By.id("input-sort")).click();
     {
       WebElement dropdown = driver.findElement(By.id("input-sort"));

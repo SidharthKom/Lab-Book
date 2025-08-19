@@ -2,26 +2,18 @@ package Webdriver;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.Keys;
 import java.util.*;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.time.Duration;
 public class Lab4Test_qn8 {
   private WebDriver driver;
@@ -42,10 +34,12 @@ public void tearDown() {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     driver.get("https://tutorialsninja.com/demo/index.php?");
     driver.manage().window().setSize(new Dimension(1552, 832));
-    assertThat(driver.getTitle(), is("Your Store"));
+    Assert.assertEquals(driver.getTitle(), "Your Store");
+    System.out.println("The Title Your Store is verified");
     driver.findElement(By.linkText("Desktops")).click();
     driver.findElement(By.linkText("Mac (1)")).click();
-    assertThat(driver.getTitle(), is("Mac"));
+    Assert.assertEquals(driver.getTitle(), "Mac");
+    System.out.println("Title 'Mac' is verified");
     //driver.findElement(By.linkText("   -Mac (1)")).click();
     driver.findElement(By.id("input-sort")).click();
     {
