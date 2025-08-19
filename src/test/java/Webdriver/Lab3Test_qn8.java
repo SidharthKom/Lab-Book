@@ -25,7 +25,7 @@ import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
-public class Lab3Test {
+public class Lab3Test_qn8 {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;

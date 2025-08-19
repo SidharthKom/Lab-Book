@@ -23,7 +23,7 @@ import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
-public class Lab4Test {
+public class Lab4Test_qn8 {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
