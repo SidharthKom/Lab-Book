@@ -2,6 +2,10 @@ package Webdriver;
 
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.testng.annotations.BeforeMethod;
@@ -10,31 +14,55 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeClass;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
-public class TC0012_TestNG {
+public class TC0012_TestNG2_pagefactory {
 	WebDriver driver;
+	String projectpath = System.getProperty("user.dir");
   @Test(dataProvider = "dp")
-  public void f(String username, String password) throws InterruptedException {
+  public void f(String username, String password) throws InterruptedException, IOException {
 		String title=driver.getTitle();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		System.out.println("The Title is:"+title);
+		Thread.sleep(5000);
+		//Assert.assertEquals(title, "Amazon");
+		ExtentReports extent = new ExtentReports();
+		String reportpath = projectpath+"\\Augreport.html";
+		ExtentSparkReporter spark = new ExtentSparkReporter(reportpath);
+		extent.attachReporter(spark);
+		ExtentTest test =extent.createTest("Verify the Title of the page");
+		
+		if(title.equals("orangehrm")) {
+			test.pass("title matched");
+		}
+		else
+		{	test.fail("title not matched");
+			
+			File scr =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			String dest = projectpath+"\\screenshot1.png";
+			File detfile = new File(dest);
+			FileUtils.copyFile(scr, detfile);
+			test.addScreenCaptureFromPath(dest);
+		}
+		extent.flush();
 		Thread.sleep(3000);
 		
-		login_pageobjects obj = new login_pageobjects(driver);
+		login_pageFactory obj = PageFactory.initElements(driver,login_pageFactory.class);
 		obj.enterusername(username);
 		obj.enterpassword(password);
 		obj.clickonlogin();
@@ -58,32 +86,15 @@ public class TC0012_TestNG {
 
 
   @DataProvider
-  public Object[][] dp() throws IOException {
-	  String[][] data = new String[3][2];
-	  System.out.println("Before Class");
-	  String projectpath = System.getProperty("user.dir");
-	  File file1 = new File(projectpath+"\\details.xlsx");
-	  FileInputStream fs = new FileInputStream(file1);
-	  XSSFWorkbook workbook = new XSSFWorkbook(fs);
-	  XSSFSheet worksheet = workbook.getSheetAt(0);
-	  int rowcount = worksheet.getPhysicalNumberOfRows();
-	  System.out.println("Rows:"+rowcount);
-	  
-	  for(int i=0;i<rowcount;i++) {
-	  data[i][0]=worksheet.getRow(i).getCell(0).getStringCellValue();
-	  data[i][1]=worksheet.getRow(i).getCell(1).getStringCellValue();
-	  
-	  }
-	  return data;
-//    return new Object[][] {
-//      new Object[] { "Admin", "admin123" },
-//      new Object[] { "sid", "admin123" },
-    }
-  
+  public Object[][] dp() {
+    return new Object[][] {
+      new Object[] { "Admin", "admin123" },
+      new Object[] { "sid", "admin123" },
+    };
+  }
   @BeforeClass
   public void beforeClass() {
-	  
-	  
+	  System.out.println("Before Class");
 	  
   }
 

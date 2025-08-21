@@ -28,6 +28,7 @@ import java.time.Duration;
 public class Lab3Test_qn8 {
   private WebDriver driver;
   private Map<String, Object> vars;
+  private
   JavascriptExecutor js;
   
 @BeforeMethod
@@ -43,9 +44,13 @@ public void tearDown() {
   }
   @Test
   public void lab3() {
-	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     driver.get("https://tutorialsninja.com/demo/index.php?");
     driver.manage().window().setSize(new Dimension(1552, 832));
+//    Lab_3_po_Q11 obj = new Lab_3_po_Q11(driver);
+//    obj.MacDesk();
+//    obj.sortName();
+//    obj.product();
     driver.findElement(By.linkText("Desktops")).click();
     driver.findElement(By.linkText("Mac (1)")).click();
     driver.findElement(By.id("input-sort")).click();
@@ -65,4 +70,7 @@ public void tearDown() {
     }
     driver.findElement(By.cssSelector(".button-group > button:nth-child(1)")).click();
   }
-}
+    
+    
+  }
+

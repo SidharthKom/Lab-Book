@@ -3,7 +3,7 @@
 <suite name="Suite_3" parallel='tests' thread-count="5">
   <test thread-count="5" name="Test_3">
     <classes>
-	  <class name="Webdriver.Lab3Test"/>
+	  <class name="Webdriver.Lab4Test_qn8"/>
     </classes>
   </test> <!-- Test_3 -->
   

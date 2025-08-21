@@ -12,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.JavascriptExecutor;
 import java.util.*;
 import java.time.Duration;
-public class Lab4Test_qn8 {
+public class Lab4Test_qn11 {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -33,30 +33,17 @@ public void tearDown() {
     driver.manage().window().setSize(new Dimension(1552, 832));
     Assert.assertEquals(driver.getTitle(), "Your Store");
     System.out.println("The Title Your Store is verified");
-    driver.findElement(By.linkText("Desktops")).click();
-    driver.findElement(By.linkText("Mac (1)")).click();
+    
+    Lab_4_po_Q11 obj_1 = new Lab_4_po_Q11(driver);
+    
+    obj_1.MacDesk_1();
     Assert.assertEquals(driver.getTitle(), "Mac");
     System.out.println("Title 'Mac' is verified");
-    //driver.findElement(By.linkText("   -Mac (1)")).click();
-    driver.findElement(By.id("input-sort")).click();
-    {
-      WebElement dropdown = driver.findElement(By.id("input-sort"));
-      dropdown.findElement(By.xpath("//option[. = 'Name (A - Z)']")).click();
-    }
-    {
-      WebElement element = driver.findElement(By.cssSelector(".button-group > button:nth-child(1)"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
+    
+    obj_1.sortName_1();
    
-   
-    driver.findElement(By.name("search")).click();
-    driver.findElement(By.name("search")).sendKeys("Monitors");
-    driver.findElement(By.xpath("//*[@id=\"search\"]/span/button")).click();
-    driver.findElement(By.id("input-search")).click();
-    driver.findElement(By.id("input-search")).clear();
-    Thread.sleep(5000);
-    driver.findElement(By.xpath("//*[@id=\"description\"]")).click();
-    driver.findElement(By.id("button-search")).click();
+    obj_1.product_1();
+    obj_1.search_1();
+    obj_1.descript_1();
   }
 }

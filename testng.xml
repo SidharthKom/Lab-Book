@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="Webdriver.NewTestng3"/>
+      <class name="Webdriver.Lab3Test_qn8"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

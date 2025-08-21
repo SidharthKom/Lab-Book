@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [Suite_4]" guice-stage="DEVELOPMENT">
-  <test thread-count="2" parallel="tests" name="Edge(failed)">
-    <parameter name="browser" value="edge"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Webdriver.Lab4Test_qn9">
+      <class name="Webdriver.Qn_14">
         <methods>
-          <include name="lab4"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
+          <include name="f"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- Webdriver.Lab4Test_qn9 -->
+      </class> <!-- Webdriver.Qn_14 -->
     </classes>
-  </test> <!-- Edge(failed) -->
-  <test thread-count="2" parallel="tests" name="Chrometest(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="Webdriver.Lab4Test_qn9">
-        <methods>
-          <include name="lab4"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- Webdriver.Lab4Test_qn9 -->
-    </classes>
-  </test> <!-- Chrometest(failed) -->
-</suite> <!-- Failed suite [Suite_4] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

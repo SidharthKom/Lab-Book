@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-19T14:22:31 IST" name="Suite_4" finished-at="2025-08-19T14:23:03 IST" duration-ms="32442">
+  <suite started-at="2025-08-21T12:29:08 IST" name="Default suite" finished-at="2025-08-21T12:29:23 IST" duration-ms="14781">
     <groups>
     </groups>
-    <test started-at="2025-08-19T14:22:31 IST" name="Chrometest" finished-at="2025-08-19T14:23:02 IST" duration-ms="31638">
-      <class name="Webdriver.Lab4Test_qn9">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:Webdriver.Lab4Test_qn9@7c7a06ec]" started-at="2025-08-19T14:22:31 IST" name="setUp" finished-at="2025-08-19T14:22:46 IST" duration-ms="15535" status="PASS">
+    <test started-at="2025-08-21T12:29:08 IST" name="Default test" finished-at="2025-08-21T12:29:23 IST" duration-ms="14781">
+      <class name="Webdriver.Qn_14">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Webdriver.Qn_14@477b4cdf]" started-at="2025-08-21T12:29:10 IST" name="beforeMethod" finished-at="2025-08-21T12:29:19 IST" duration-ms="9007" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="f(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Webdriver.Qn_14@477b4cdf]" started-at="2025-08-21T12:29:19 IST" name="f" data-provider="dp" finished-at="2025-08-21T12:29:23 IST" duration-ms="4258" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[Sidharth]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[K]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sid@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[912345]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[abc123]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[abc123]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="lab4()[pri:0, instance:Webdriver.Lab4Test_qn9@7c7a06ec]" started-at="2025-08-19T14:22:46 IST" name="lab4" finished-at="2025-08-19T14:22:58 IST" duration-ms="12270" status="PASS">
+        </test-method> <!-- f -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Webdriver.Qn_14@477b4cdf]" started-at="2025-08-21T12:29:23 IST" name="afterMethod" finished-at="2025-08-21T12:29:23 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- lab4 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Webdriver.Lab4Test_qn9@7c7a06ec]" started-at="2025-08-19T14:22:59 IST" name="tearDown" finished-at="2025-08-19T14:23:02 IST" duration-ms="3681" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- Webdriver.Lab4Test_qn9 -->
-    </test> <!-- Chrometest -->
-    <test started-at="2025-08-19T14:22:31 IST" name="Edge" finished-at="2025-08-19T14:23:03 IST" duration-ms="32442">
-      <class name="Webdriver.Lab4Test_qn9">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:Webdriver.Lab4Test_qn9@69453e37]" started-at="2025-08-19T14:22:31 IST" name="setUp" finished-at="2025-08-19T14:22:43 IST" duration-ms="12656" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[edge]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="lab4()[pri:0, instance:Webdriver.Lab4Test_qn9@69453e37]" started-at="2025-08-19T14:22:43 IST" name="lab4" finished-at="2025-08-19T14:23:01 IST" duration-ms="17552" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- lab4 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Webdriver.Lab4Test_qn9@69453e37]" started-at="2025-08-19T14:23:01 IST" name="tearDown" finished-at="2025-08-19T14:23:03 IST" duration-ms="2117" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- Webdriver.Lab4Test_qn9 -->
-    </test> <!-- Edge -->
-  </suite> <!-- Suite_4 -->
+        </test-method> <!-- afterMethod -->
+      </class> <!-- Webdriver.Qn_14 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
