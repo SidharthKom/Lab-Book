@@ -11,7 +11,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 
-import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
@@ -51,16 +50,19 @@ public class Qn_14 {
     XSSFWorkbook workbook_2 = new XSSFWorkbook(fs_2);
     XSSFSheet worksheet_2 = workbook_2.getSheetAt(0);
     int rowcount = worksheet_2.getPhysicalNumberOfRows();
-    int colcount = 6;
+//    int colcount = 6;
     System.out.println("Rows:"+ rowcount);
     
-    DataFormatter formatter = new DataFormatter();
+//    DataFormatter formatter = new DataFormatter();
     
-    for (int i = 0; i < rowcount; i++) {
-        for (int j = 0; j < colcount; j++) {
-            data[i][j] = formatter.formatCellValue(worksheet_2.getRow(i).getCell(j));
-        }
-    }
+    for(int i=0;i<rowcount;i++) {
+    	data[i][0]=worksheet_2.getRow(i).getCell(0).getStringCellValue();
+    	data[i][1]=worksheet_2.getRow(i).getCell(1).getStringCellValue();
+    	data[i][2]=worksheet_2.getRow(i).getCell(2).getStringCellValue();
+    	data[i][3]=worksheet_2.getRow(i).getCell(3).toString();
+    	data[i][4]=worksheet_2.getRow(i).getCell(4).getStringCellValue();
+    	data[i][5]=worksheet_2.getRow(i).getCell(5).getStringCellValue();
+    	}
     return data;
   }
 }
