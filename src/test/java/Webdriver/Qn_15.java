@@ -24,7 +24,7 @@ public class Qn_15 {
   @Test(dataProvider = "dp")
   public void f(String firstname, String lastname, String email, String phone, String password, String confpass) {
 	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	  Qn_14_PO obj_14 = new Qn_14_PO(driver);
+	  Qn_15_PO obj_14 = new Qn_15_PO(driver);
 	  obj_14.accountreg();
 	  obj_14.registeruser(firstname, lastname, email, phone, password, confpass);
   }
