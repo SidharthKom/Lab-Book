@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Webdriver.TC00CSV">
+      <class name="Webdriver.Qn_16">
         <methods>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
           <include name="f"/>
         </methods>
-      </class> <!-- Webdriver.TC00CSV -->
+      </class> <!-- Webdriver.Qn_16 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
