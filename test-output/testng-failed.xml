@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Webdriver.Qn_16">
+      <class name="com.orangehrm.tests.LoginOrangeHRM">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="f"/>
+          <include name="flushreport"/>
+          <include name="setupreport"/>
+          <include name="teardown"/>
+          <include name="verifylogin" invocation-numbers="1 2"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- Webdriver.Qn_16 -->
+      </class> <!-- com.orangehrm.tests.LoginOrangeHRM -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
