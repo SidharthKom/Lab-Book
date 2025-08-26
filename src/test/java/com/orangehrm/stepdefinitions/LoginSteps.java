@@ -2,6 +2,7 @@ package com.orangehrm.stepdefinitions;
  
 import java.time.Duration;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -38,6 +39,13 @@ public class LoginSteps {
 		driver.findElement(By.name("username")).sendKeys("Admin");
 				driver.findElement(By.name("password")).sendKeys("admin123");
 	}
+	
+	@When("Enter invalid username and password")
+	public void enter_invalid_username_and_password() {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.findElement(By.name("username")).sendKeys("sid");
+				driver.findElement(By.name("password")).sendKeys("sid3");
+	}
  
 	@When("Click on login Button")
 	public void click_on_login_button() {
@@ -54,17 +62,23 @@ public class LoginSteps {
 		System.out.println("The Title is:"+title);
 		if(title.equalsIgnoreCase("OrangeHRM"))
 		{
-			System.out.println("Login Suucessfull");
+			System.out.println("Login Sucessfull");
 		}
 		else
 		{
-			System.out.println("Login unSuucessfull");
+			System.out.println("Login unSucessfull");
 		}
 	}
 	@Then("verify dashboard")
 	public void verify_dashboard() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		boolean isDashboardVisible = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[1]/span/h6")).isDisplayed();
+		Assert.assertTrue("Dashboard not visible", isDashboardVisible);
+	}
+	
+	@Then("Close the browser")
+	public void close_browser() {
+		driver.close();
 	}
  
 }
